@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->foreignId("dadosPessoaisId")->constraint()->onDelete("CASCADE")->nullable();
+            $table->string('nivelAcesso');
             $table->rememberToken();
             $table->timestamps();
         });
