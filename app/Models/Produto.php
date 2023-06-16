@@ -15,4 +15,8 @@ class Produto extends Model
     public function categoriaRelacionamento(){
         return $this->belongsTo(Categoria::class, 'categoriaId');
     }
+
+    public function carrinhoComprasRelacionamento(){
+        return $this->hasMany(CarrinhoCompras::class, "carrinhoId");
+    }
 }

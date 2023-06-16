@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('foto');
             $table->date('dataFabrico');
             $table->date('validade');
-            $table->enum('descricao',["Novo", "Em promoção", "Esgotado"]);
+            $table->string('descricao');
             $table->double('visibilidade')->default(true);
             $table->foreignId("categoriaId")->constraint()->onDelete("CASCADE");
             $table->timestamps();

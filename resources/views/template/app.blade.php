@@ -32,7 +32,7 @@
 
     <div class="row d-flex justify-content-between align-items-center">
 
-        <div class="header-info-left d-flex">
+        <div class="header-info-left d-flex align-items-center ">
             <div class="flag">
             <img src="./eCommerce HTML-5 Template_files/header_icon.png" alt="">
             </div>
@@ -51,7 +51,11 @@
             </div>
             <ul class="contact-now">
             <li>+244 923 923 63 04 56</li>
-            </ul>
+          </ul>
+          <div class='mt-2 mx-2 text-uppercase'>
+            <a class='nav-link fw-bold text-danger' href="{{route('user.logout')}}">{{Auth::user()->dadosPessoaisRelacionamento->nome ?? ''}}</a>
+          </div>
+
         </div>
 
 
@@ -88,11 +92,13 @@
       </ul>
       </li>
       <li><a href="">Contactos</a></li>
+
       </ul>
 
     </nav>
     </div>
     </div>
+
     <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
     <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
     <li class="d-none d-xl-block">
@@ -108,13 +114,21 @@
     <i class="far fa-heart"></i>
     </div>
     </li>
+
     <li>
+
     <div class="shopping-card">
-    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+
     </div>
     </li>
+
+    <li>
+
+    </li>
+
+
     @guest
-        <li class="d-none d-lg-block"> <a href="#" class="btn header-btn">Autenticação</a>
+        <li class="d-none d-lg-block"> <a href="{{route('user.login')}}" class="btn header-btn">Autenticação</a>
         </li>
     @endguest
     </ul>
@@ -143,7 +157,7 @@
     </ul>
     </li>
     <li><a href="https://preview.colorlib.com/theme/estore/contact.html" role="menuitem" tabindex="-1">Contacto de loja</a></li>
-    </ul></div></div>
+  </ul></div></div>
     </div>
     </div>
     </div>
@@ -279,6 +293,12 @@
 <script src="{{asset('/assets/js/main.js.download')}}"></script><a id="scrollUp"  style="position: fixed; z-index: 2147483647; display: block;"><i class="fa fa-arrow-up"></i></a>
 
 <script>
+
+    let chartBox = document.querySelector(".shopping-card");
+    chartBox.style.display = "none";
+
+
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->enum("sexo", ["Masculino" , "Femenino"]);
             $table->date("dataNascimento");
             $table->string("telefone",15);
-            $table->string("provinvia");
+            $table->string("provincia");
             $table->string("municipio");
             $table->string("rua");
             $table->string("bairro");

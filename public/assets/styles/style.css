@@ -2259,7 +2259,7 @@ input:focus {
 }
 
 /* line 224, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_headerMenu.scss */
-.header-bottom .header-right .shopping-card::before {
+.header-bottom .header-right .shopping-card, .chart::before {
   position: absolute;
   content: "02";
   width: 25px;

@@ -126,9 +126,9 @@
 
             <div class="single-product mb-60">
             <div class="product-img">
-            <img src="{{asset('assets/img/mouse-ewent-mini-usb-optico-1000dpi-preto.jpg')}}" alt="">
+            <img src="{{asset('imagens/produtos/'.$product->foto)}}" alt="">
             <div class="new-product">
-            <span>{{$product->descricao}}</span>
+            <span>Novo</span>
             </div>
             </div>
             <div class="product-caption">
@@ -141,7 +141,10 @@
                 </div>
 
             <div class="d-flex justify-content-center align-items-center">
-            <a id='chart' class="text-dark mx-1" href=""><i class='fas fa-shopping-cart fa-2x'></i></a>
+            <a id='chart' class="text-dark mx-1" href="{{route('client.add.chart',$product->produtoId)}}"><i class='fas fa-shopping-cart fa-2x'></i></a>
+
+                <a class='{{($checkProduct >=1) ? "d-block": "d-none"}}' href="{{route('form.confirm.payment')}}"><i class="fa fa-check-square fa-2x text-success mx-1"></i></a>
+
             <span class='fs-2 fw-bold'>{{$product->preco."KZ"}} </span>
             </div>
 

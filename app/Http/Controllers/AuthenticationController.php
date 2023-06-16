@@ -24,12 +24,20 @@ class AuthenticationController extends Controller
 
             if(Auth::user()->nivelAcesso === "admin"){
                 return redirect()->route("admin.index");
+
+            }else if(Auth::user()->nivelAcesso === "cliente"){
+                return redirect()->route("website.index");
             }
+
           }else {
             return redirect()->back()->with("wrongLogin", "Credenciais inválidas.");
           }
+        }
 
-}
+        public function logout(){
+            Auth::logout();
+            return redirect()->route("user.login");
+        }
 
 
 
